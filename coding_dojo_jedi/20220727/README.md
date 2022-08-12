@@ -42,7 +42,7 @@ Nenhum personagem "Skywaler" encontrado, mas encontrei: "Luke Skywalker", "Anaki
 # o mesmo acontece com fuzz.partial_ratio('skywaler', 'Anakin Skywalker')
 ```
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220727/README.md)
+[... Continuação dos exercícios ...](/coding_dojo_jedi/20220730a/README.md)
 
 ## Referências
 

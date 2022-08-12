@@ -45,7 +45,7 @@ _dicas_:
 
 ``` Obs: Atividade excedeu o tempo disponível, e foi fracionada para o proximo dojo. ```
 
-[... Continuação dos exercícios ...](/coding_dojo_jedi/20220723/README.md)
+[... Continuação dos exercícios ...](/coding_dojo_jedi/20220725/README.md)
 
 ## Referências
 
