@@ -6,22 +6,21 @@ from typing import ClassVar
 class Numeros:
     """Converte numeros para romanos e arabicos."""
 
-    romanos: ClassVar = [
-        'M',
-        'CM',
-        'D',
-        'CD',
-        'C',
-        'XC',
-        'L',
-        'XL',
-        'X',
-        'IX',
-        'V',
-        'IV',
-        'I',
-    ]
-    arabicos: ClassVar = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    nums: ClassVar = {
+        1000: 'M',
+        900: 'CM',
+        500: 'D',
+        400: 'CD',
+        100: 'C',
+        90: 'XC',
+        50: 'L',
+        40: 'XL',
+        10: 'X',
+        9: 'IX',
+        5: 'V',
+        4: 'IV',
+        1: 'I',
+    }
 
     def __init__(self):
         """Init it."""
@@ -32,20 +31,28 @@ class Numeros:
         qnt = len(numero_romano)
         for idx in range(qnt):
             if idx + 1 < qnt and (
-                self.arabicos[self.romanos.index(numero_romano[idx])]
-                < self.arabicos[self.romanos.index(numero_romano[idx + 1])]
+                list(self.nums.keys())[
+                    list(self.nums.values()).index(numero_romano[idx])
+                ]
+                < list(self.nums.keys())[
+                    list(self.nums.values()).index(numero_romano[idx + 1])
+                ]
             ):
-                result -= self.arabicos[self.romanos.index(numero_romano[idx])]
+                result -= list(self.nums.keys())[
+                    list(self.nums.values()).index(numero_romano[idx])
+                ]
             else:
-                result += self.arabicos[self.romanos.index(numero_romano[idx])]
+                result += list(self.nums.keys())[
+                    list(self.nums.values()).index(numero_romano[idx])
+                ]
 
         return result
 
     def to_roman(self, num: int) -> str:
         """Transforma número arábico para romano."""
         result = ''
-        for idx, i in enumerate(self.arabicos):
+        for i in self.nums:
             while num >= i:
                 num = num - i
-                result = result + self.romanos[idx]
+                result = result + self.nums[i]
         return result
